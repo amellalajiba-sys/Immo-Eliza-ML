@@ -90,7 +90,7 @@ The preprocessing steps include:
 * One-Hot Encoding of categorical variables using `OneHotEncoder`
 * Automatic handling of unseen categories during prediction with `handle_unknown="ignore"`
 
-Using a pipeline ensures that exactly the same preprocessing steps are applied during both training and prediction.
+Using a pipeline ensures that exactly the same preprocessing steps are applied during both training and prediction, making the workflow reusable and reducing the risk of data leakage.
 
 ---
 
@@ -115,6 +115,28 @@ The models were evaluated using:
 * R² Score
 
 These metrics were used to compare the different algorithms and identify the best-performing model.
+
+---
+
+# Model Performance
+
+The three regression models were trained and evaluated on the same train/test split (80% training - 20% testing).
+
+| Model             |                         MAE |                         MSE |                    R² Score |
+| ----------------- | --------------------------: | --------------------------: | --------------------------: |
+| Linear Regression |                  120 686.24 |           46 628 876 479.08 |                       0.536 |
+| Random Forest     |                   92 604.67 |           31 423 530 545.12 |                       0.687 |
+| XGBoost           |                   88 716.74 |           28 341 488 383.78 |                       0.718 |
+
+---
+
+## Best Model
+
+Among the three tested models, **Random Forest** and **XGBoost** achieved the best performances.
+
+Compared to Linear Regression, the tree-based models captured the non-linear relationships within the dataset more effectively, leading to lower prediction errors and higher R² scores.
+
+For this reason, the trained Random Forest and XGBoost models were saved and can be reused for future predictions.
 
 ---
 
@@ -160,7 +182,7 @@ Predicted price (XGBoost): €548,000.00
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/immo-eliza-ml.git
+git clone https://github.com/amellalajiba-sys/Immo-Eliza-ML.git
 ```
 
 Create a virtual environment:
@@ -228,5 +250,5 @@ Several improvements could be made to increase the model's performance:
 
 Project completed as part of the BeCode Artificial Intelligence & Data Science Bootcamp by Amellal Hiba.
 
-"https://www.linkedin.com/in/amellal-hiba-7a636940a/"
+LinkedIn: <https://www.linkedin.com/in/amellal-hiba-7a636940a/>
 
