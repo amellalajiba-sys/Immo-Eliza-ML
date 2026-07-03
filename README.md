@@ -24,13 +24,15 @@ immo-eliza-ml/
 ├── data/
 │   └── cleaned_scraped_properties.csv
 │
+├── analysis/
+│   └── Hiba.ipynb
+│
 ├── models/
 │   ├── linear_regression_model.pkl
 │   ├── random_forest_model.pkl
 │   └── xgboost_model.pkl
 │
 ├── src/
-│   ├── Hiba.ipynb
 │   ├── predict.py
 │   ├── preprocessing.py
 │   └── train.py
