@@ -1,6 +1,4 @@
-# Immo-Eliza-ML
-
-# Immo Eliza - Machine Learning Regression
+# Immo Eliza - Machine Learning Project
 
 ## Project Description
 
