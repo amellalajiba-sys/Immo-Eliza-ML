@@ -64,6 +64,19 @@ def main():
     rf_model = train_model(rf_model, X_train, y_train)
     xgb_model = train_model(xgb_model, X_train, y_train)
 
+    print(len(rf_model.named_steps["preprocessor"].get_feature_names_out()))
+    print(len(xgb_model.named_steps["preprocessor"].get_feature_names_out()))
+    print(len(model.named_steps["preprocessor"].get_feature_names_out()))
+
+    train_predictions = model.predict(X_train)
+    print("Linear Regression Train R²:", r2_score(y_train, train_predictions))
+
+    rf_train_predictions = rf_model.predict(X_train)
+    print("Random Forest Train R²:", r2_score(y_train, rf_train_predictions))
+
+    xgb_train_predictions = xgb_model.predict(X_train)
+    print("XGBoost Train R²:", r2_score(y_train, xgb_train_predictions))
+
     # Evaluate the model using MAE, MSE and R²
     def evaluate_model(model, X_test, y_test, name):
 
